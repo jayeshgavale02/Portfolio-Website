@@ -18,6 +18,7 @@
     <div class="main">
       <nav id="navbar">
         <img src="img/icons8-coding-50.png" alt="" />
+        <!-- <h1>Jayesh</h1> -->
 
         <div class="navbar">
           <ul id="navMenu">
@@ -31,7 +32,7 @@
       </nav>
       <div class="card" id="card">
         <div class="content" data-aos="fade-right">
-          <h1>Hello,i'm </h1>
+          <h1>Hello, i'm </h1>
           <h2><span>Jayesh Gavale</span></h2>
           <h3>Full Stack Web Developer</h3>
           <br />
@@ -192,17 +193,109 @@
 
       <!-- moda; -->
       <div class="modal" id="myModal">
-        </div>
+        <!-- <div class="modal-content">
+          <div class="modal-header">
+            <button class="close">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h1>Weather App</h1>
+          
+            <hr>
+          </div>
+          <div class="model-head">
+            <p class="modal-title">
+              <span >Technologies: </span>
+              <span >Reactjs, OpenWeatherMap API</span>
+            </p>
+          
+            <p class="modal-title">
+              <span>Live Demo : </span>
+              <a
+                href="https://reactjs-weather-app-sagar-bhoi.netlify.app/"
+                target="_blank"
+                >https://reactjs-weather-app-sagar-bhoi.netlify.app/
+                <i class="ri-external-link-line"></i
+              ></a>
+            </p>
+            <p class="modal-title">
+              <span>Github: </span>
+              <a target="_blank"
+                href="https://github.com/SagarBhoi404/React-Weather-App"
+                >https://github.com/SagarBhoi404/React-Weather-App
+                <i class="ri-external-link-line"></i></a
+              ><br>
+              <span class="node">*Note: Project Screenshot added in github repository.</span>
+            </p>
+          </div>
+          <p class="modal-title">
+            <span>
+              Project Description:
+            </span>
+          </p>
+          <p >
+            This Weather App is built using React.js and fetches weather data
+            from the OpenWeatherMap API. It allows users to search for a city
+            and get the current weather information, including temperature,
+            humidity, and weather conditions.
+          </p>
+        </div> -->
+      </div>
       <!-- moda; -->
 
       <div class="project" id="project">
         <h1>Projects</h1>
       </div>
       <div class="projectcard" id="projectcard">
-        
+        <!-- <div class="product_card" data-aos="flip-left">
+          <div class="image">
+            <img
+              src="https://i.rtings.com/assets/products/nggZcsC3/sony-wh-1000xm4-wireless/design-medium.jpg?format=auto"
+              alt=""
+            />
+          </div>
+          <div class="product_info">
+            <h2 class="product_name">Sony Headphone</h2>
+            <p class="product_description">
+              WH-1000XM5 Wireless Industry Leading Noise Canceling Overhead
+              Headphones
+            </p>
+
+            <div class="bottom">
+              <div class="buttons">
+                <button class="add_to_cart">
+                  View Project
+                  <i class="fas fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product_card" data-aos="flip-left">
+          <div class="image">
+            <img
+              src="https://i.rtings.com/assets/products/nggZcsC3/sony-wh-1000xm4-wireless/design-medium.jpg?format=auto"
+              alt=""
+            />
+          </div>
+          <div class="product_info">
+            <h2 class="product_name">Sony Headphone</h2>
+            <p class="product_description">
+              WH-1000XM5 Wireless Industry Leading Noise Canceling Overhead
+              Headphones
+            </p>
+
+            <div class="bottom">
+              <div class="buttons">
+                <button class="add_to_cart">
+                  View Project
+                  <i class="fas fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div> -->
       </div>
 
-      
       <div class="conatct-details" id="Contact">
         <div class="sectionleft">
           <div class="contact-detail">
@@ -230,28 +323,30 @@
             </span>
           </div>
         </div>
+       <div class="sectionright">
+  <form id="contactForm">
+    <h1>Contact Form</h1>
+    <div>
+      <label for="name">Name</label><br />
+      <input type="text" name="name" id="name" required /><br />
+    </div>
+    <div>
+      <label for="email">Email</label><br />
+      <input type="email" name="email" id="email" required /><br />
+    </div>
+    <div>
+      <label for="msg">Message</label><br />
+      <textarea name="msg" id="msg" required></textarea><br />
+    </div>
+    <div>
+      <div id="formResponse"></div> <!-- For displaying the response -->
+      <button type="submit"><strong>Submit</strong></button>
+    </div>
+  </form>
 
 
-        <div class="sectionright">
-          <form action="">
-            <h1>Contact Form</h1>
-            <div>
-              <label for="">Name</label><br />
-              <input type="text" /><br />
-            </div>
-            <div>
-              <label for="">Email</label><br />
-              <input type="text" /><br />
-            </div>
-            <div>
-              <label for="">Message</label><br />
-              <textarea> </textarea><br />
-            </div>
-            <div>
-              <button><strong>Submit</strong></button>
-            </div>
-          </form>
-        </div>
+</div>
+
       </div>
       <div class="footer">
         <h3>Made with ❤️ by Jayesh Gavale</h3>
@@ -276,6 +371,34 @@
         var navMenu = document.getElementById("navMenu");
         navMenu.classList.toggle("active");
       }
+
+      document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the default form submission
+  
+  // Create a FormData object
+  var formData = new FormData(this);
+
+  // Perform the AJAX request
+  fetch('Email Script/send_mail.php', {
+    method: 'POST',
+    body: formData,
+  })
+  .then(response => response.json()) // Parse JSON response
+  .then(data => {
+    // Display success or error message
+    if (data.error) {
+      document.getElementById('formResponse').innerHTML = `<p style="color: red;">${data.message}</p>`;
+    } else {
+      document.getElementById('formResponse').innerHTML = `<p style="color: green;">${data.message}</p>`;
+      document.getElementById('contactForm').reset(); // Clear the form fields
+    }
+  })
+  .catch(error => {
+    // Handle any errors that occurred during the request
+    document.getElementById('formResponse').innerHTML = `<p style="color: red;">An error occurred: ${error.message}</p>`;
+  });
+});
+
     </script>
   </body>
 </html>
