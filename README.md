@@ -35,5 +35,5 @@ To view the portfolio locally or modify it to suit your needs:
 ### Instructions
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/portfolio-website.git
+   git clone https://github.com/jayeshgavale02/Portfolio-Website.git
    cd portfolio-website
